@@ -7,5 +7,5 @@ def input_text() -> str:
     Returns:
         str
     """
-    input_text = st.text_input(label="You: ", key="input")
+    input_text = st.text_input(label="You: ", value="", key="input")
     return input_text

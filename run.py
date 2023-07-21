@@ -5,7 +5,7 @@ from streamlit_chat import message
 from module.state import initialize_state
 from module.get_text import input_text
 from module.util import random_hash
-from module.query_text import query
+from module.get_response import query, summary_chats
 
 
 st.header("hcgpt - demo")
@@ -25,7 +25,7 @@ if user_input:
         }
     )
     st.session_state["past"].append(user_input)
-    st.session_state["generated"].append(output["generated_text"])
+    st.session_state["generated"].append(output)
 
 
 if st.session_state["generated"] != []:
@@ -41,3 +41,6 @@ if st.session_state["generated"] != []:
             message=_generated_text,
             key=random_hash(text=_generated_text, time=str(datetime.now())),
         )
+
+if st.button(label="summarise"):
+    st.text_area(value=summary_chats())

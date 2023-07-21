@@ -11,3 +11,6 @@ def initialize_state() -> None:
 
     if "past" not in st.session_state:
         st.session_state["past"]: List[str] = []
+
+    if "history" not in st.session_state:
+        st.session_state["history"]: List[str] = []
