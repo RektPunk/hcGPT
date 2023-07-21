@@ -42,5 +42,5 @@ if st.session_state["generated"] != []:
             key=random_hash(text=_generated_text, time=str(datetime.now())),
         )
 
-if st.button(label="summarise_button"):
+if st.button(label="summarise"):
     st.text_area(label="", value=summary_chats())
